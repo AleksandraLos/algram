@@ -98,7 +98,7 @@ export const SignupForm = () => {
         )}
       />
       <Button type="submit" className="shad-button_primary">{isLoading ? (<div className="flex-center gap-2"><Loader/>Loading . . .</div>): "Sign up"}</Button>
-    <p className="text-small-regular text-light-2 mt-2 text-center">Alredy have an accout? <Link to="/sign-in" className="text-primary-500 text-small-semibold ml-1">Log in</Link> </p>
+    <p className="text-small-regular text-light-2 mt-2 text-center">Alredy have an accout? <Link to="/sign-in" className="text-primary-500 text-small-semibold ml-1">Log in</Link>                                                                                 </p>
     </form>
     </div>
   </Form>
