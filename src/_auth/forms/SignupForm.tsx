@@ -13,11 +13,13 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { SiguUpValidationSchema } from "@/lib/validation"
-import Logoipsum from '../../../src/assets/logoipsum-289.svg'
+import Logoipsum from '@/assets/logoipsum-289.svg'
+import Loader from "@/components/shared/Loader"
+import { Link } from "react-router-dom"
 
 export const SignupForm = () => {
 
-  const isLoading = true;
+  const isLoading = false;
    // 1. Define your form.
    const form = useForm<z.infer<typeof SiguUpValidationSchema>>({
     resolver: zodResolver(SiguUpValidationSchema),
@@ -95,7 +97,8 @@ export const SignupForm = () => {
           
         )}
       />
-      <Button type="submit" className="shad-button_primary">{isLoading ? (<div className="flex-center gap-2">Loading . . .</div>): "Sign up"}</Button>
+      <Button type="submit" className="shad-button_primary">{isLoading ? (<div className="flex-center gap-2"><Loader/>Loading . . .</div>): "Sign up"}</Button>
+    <p className="text-small-regular text-light-2 mt-2 text-center">Alredy have an accout? <Link to="/sign-in" className="text-primary-500 text-small-semibold ml-1">Log in</Link>                                                                                 </p>
     </form>
     </div>
   </Form>
